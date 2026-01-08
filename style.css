@@ -1,3 +1,13 @@
+:root {
+  --verde: #2E7D32;
+  --verde-claro: #E8F5E9;
+  --whats: #25D366;
+  --texto: #2f2f2f;
+  --cinza: #666;
+  --bg: #f4f6f5;
+  --card: #ffffff;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,70 +17,106 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
                Roboto, Arial, sans-serif;
-  color: #333333;
-  background-color: #FFFFFF;
-  line-height: 1.6;
+  background: var(--bg);
+  color: var(--texto);
+  line-height: 1.65;
 }
 
-header, main, footer {
-  max-width: 720px;
+.container {
+  max-width: 760px;
   margin: 0 auto;
-  padding: 1.5rem;
+  padding: 1.25rem;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.07);
+  overflow: hidden;
+  padding: 2rem 1.75rem;
+}
+
+.hero img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
 }
 
 header h1 {
-  color: #2E7D32;
+  color: var(--verde);
+  font-size: 1.6rem;
   margin-bottom: 0.5rem;
 }
 
 header p {
-  color: #555555;
-  font-size: 0.95rem;
+  color: var(--cinza);
+  font-size: 1rem;
 }
 
 section {
-  margin-bottom: 2rem;
+  margin-top: 2.2rem;
 }
 
 h2 {
-  color: #2E7D32;
-  margin-bottom: 0.75rem;
+  color: var(--verde);
+  font-size: 1.25rem;
+  margin-bottom: 0.6rem;
 }
 
 ul {
-  margin-left: 1.25rem;
-}
-
-li {
-  margin-bottom: 0.5rem;
-}
-
-a {
-  color: #2E7D32;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
-
-a.whatsapp {
-  display: inline-block;
-  background-color: #25D366;
-  color: #FFFFFF;
-  padding: 0.75rem 1.25rem;
-  border-radius: 4px;
-  font-weight: bold;
+  padding-left: 1.3rem;
   margin-top: 0.5rem;
 }
 
-a.whatsapp:hover {
-  background-color: #1ebe5d;
+li {
+  margin-bottom: 0.45rem;
+}
+
+.split {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.split a {
+  display: block;
+  text-align: center;
+  padding: 0.85rem;
+  border-radius: 8px;
   text-decoration: none;
+  font-weight: 500;
+}
+
+.novo {
+  background: var(--verde-claro);
+  color: var(--verde);
+}
+
+.recorrente {
+  background: #ecefed;
+  color: #222;
+}
+
+.cta {
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.btn-whats {
+  display: block;
+  width: 100%;
+  background: var(--whats);
+  color: #fff;
+  text-decoration: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
 }
 
 footer {
+  text-align: center;
   font-size: 0.85rem;
-  color: #777777;
-  border-top: 1px solid #EEEEEE;
+  color: var(--cinza);
+  margin: 2rem 0 1rem;
 }

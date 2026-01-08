@@ -49,14 +49,13 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
-      padding: 0;
+      padding: var(--espaco-sm);
     }
 
     .container {
       max-width: 440px;
       margin: 0 auto;
-      padding: var(--espaco-sm);
-      padding-bottom: 80px;
+      padding-bottom: var(--espaco-xl);
       width: 100%;
     }
 
@@ -85,7 +84,7 @@
     }
 
     .bloco {
-      margin-bottom: var(--espaco-xl);
+      margin-bottom: var(--espaco-lg);
     }
 
     .bloco:last-child {
@@ -96,7 +95,7 @@
       display: flex;
       align-items: center;
       gap: var(--espaco-sm);
-      margin-bottom: var(--espaco-md);
+      margin-bottom: var(--espaco-sm);
     }
 
     .bloco-header-icon {
@@ -127,13 +126,13 @@
     .bloco-descricao {
       background: linear-gradient(135deg, var(--verde-luz-fundo) 0%, rgba(232, 245, 233, 0.5) 100%);
       border-radius: var(--raio-grande);
-      padding: var(--espaco-lg);
+      padding: var(--espaco-md);
     }
 
     .bloco-descricao-texto {
       font-size: var(--fonte-corpo);
       color: var(--texto-medio);
-      line-height: 1.7;
+      line-height: 1.6;
     }
 
     .bloco-descricao-texto strong {
@@ -146,17 +145,17 @@
       padding: 0;
       display: flex;
       flex-direction: column;
-      gap: var(--espaco-sm);
+      gap: var(--espaco-xs);
     }
 
     .lista-checks-item {
       display: flex;
       align-items: flex-start;
-      gap: var(--espaco-md);
-      padding: var(--espaco-md) var(--espaco-md);
+      gap: var(--espaco-sm);
+      padding: var(--espaco-sm) var(--espaco-sm);
       background: var(--fundo-secao);
       border-radius: var(--raio-medio);
-      font-size: var(--fonte-corpo);
+      font-size: var(--fonte-pequeno);
       color: var(--texto-medio);
       transition: var(--transicao-rapida);
     }
@@ -167,8 +166,8 @@
     }
 
     .check-icon {
-      width: 20px;
-      height: 20px;
+      width: 18px;
+      height: 18px;
       background: var(--verde-claro-destaque);
       border-radius: 50%;
       display: flex;
@@ -179,25 +178,25 @@
     }
 
     .check-icon svg {
-      width: 10px;
-      height: 10px;
+      width: 9px;
+      height: 9px;
       color: var(--verde-primario);
     }
 
     .turnos-container {
       display: flex;
-      gap: var(--espaco-sm);
+      gap: var(--espaco-xs);
       flex-wrap: wrap;
     }
 
     .turno-badge {
       flex: 1;
-      min-width: 72px;
+      min-width: 65px;
       text-align: center;
-      padding: var(--espaco-sm) var(--espaco-md);
+      padding: var(--espaco-xs) var(--espaco-sm);
       background: linear-gradient(135deg, var(--verde-luz-fundo) 0%, rgba(200, 230, 201, 0.4) 100%);
       border-radius: var(--raio-medio);
-      font-size: var(--fonte-pequeno);
+      font-size: 13px;
       font-weight: 500;
       color: var(--verde-primario);
       transition: var(--transicao-rapida);
@@ -212,7 +211,7 @@
     .opcoes-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: var(--espaco-md);
+      gap: var(--espaco-sm);
     }
 
     .opcao-card {
@@ -221,7 +220,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      padding: var(--espaco-lg) var(--espaco-md);
+      padding: var(--espaco-md) var(--espaco-sm);
       border-radius: var(--raio-grande);
       text-decoration: none;
       transition: var(--transicao-media);
@@ -242,7 +241,7 @@
     }
 
     .opcao-card:hover {
-      transform: translateY(-3px);
+      transform: translateY(-2px);
     }
 
     .opcao-card.primaria {
@@ -284,9 +283,9 @@
     }
 
     .opcao-icon {
-      width: 28px;
-      height: 28px;
-      margin-bottom: var(--espaco-sm);
+      width: 24px;
+      height: 24px;
+      margin-bottom: var(--espaco-xs);
       color: var(--verde-primario);
       transition: var(--transicao-rapida);
     }
@@ -296,7 +295,7 @@
     }
 
     .opcao-titulo {
-      font-size: var(--fonte-pequeno);
+      font-size: 13px;
       font-weight: 600;
       color: var(--verde-primario);
       transition: var(--transicao-rapida);
@@ -307,28 +306,28 @@
     }
 
     .opcao-sub {
-      font-size: 11px;
+      font-size: 10px;
       color: var(--texto-muted);
-      margin-top: var(--espaco-xs);
+      margin-top: 2px;
       transition: var(--transicao-rapida);
     }
 
     .cta-secao {
-      margin-top: var(--espaco-xl);
-      padding-top: var(--espaco-lg);
+      margin-top: var(--espaco-lg);
+      padding-top: var(--espaco-md);
       border-top: 1px solid rgba(0, 0, 0, 0.04);
     }
 
     .cta-header {
       text-align: center;
-      margin-bottom: var(--espaco-lg);
+      margin-bottom: var(--espaco-md);
     }
 
     .cta-label {
       display: inline-flex;
       align-items: center;
-      gap: var(--espaco-sm);
-      font-size: 11px;
+      gap: var(--espaco-xs);
+      font-size: 10px;
       text-transform: uppercase;
       letter-spacing: 2px;
       color: var(--texto-claro);
@@ -338,7 +337,7 @@
     .cta-label::before,
     .cta-label::after {
       content: "";
-      width: 24px;
+      width: 20px;
       height: 1px;
       background: linear-gradient(90deg, transparent, var(--texto-claro));
     }
@@ -352,12 +351,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: var(--espaco-sm);
+      gap: var(--espaco-xs);
       width: 100%;
       background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-hover) 100%);
       color: white;
       text-decoration: none;
-      padding: var(--espaco-lg) var(--espaco-lg);
+      padding: var(--espaco-md);
       border-radius: var(--raio-grande);
       font-size: var(--fonte-corpo);
       font-weight: 600;
@@ -373,8 +372,8 @@
     }
 
     .btn-whatsapp:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
     }
 
     .btn-whatsapp:active {
@@ -382,8 +381,8 @@
     }
 
     .btn-whatsapp svg {
-      width: 22px;
-      height: 22px;
+      width: 20px;
+      height: 20px;
       flex-shrink: 0;
       position: relative;
       z-index: 1;
@@ -396,7 +395,7 @@
 
     .pulse {
       position: absolute;
-      inset: -3px;
+      inset: -2px;
       border-radius: var(--raio-grande);
       background: transparent;
       border: 2px solid var(--whatsapp);
@@ -410,14 +409,14 @@
         opacity: 0.6;
       }
       100% {
-        transform: scale(1.12);
+        transform: scale(1.1);
         opacity: 0;
       }
     }
 
     .rodape {
       text-align: center;
-      padding: 32px var(--espaco-lg) var(--espaco-lg);
+      padding: var(--espaco-md);
       background: linear-gradient(to top, rgba(13, 71, 40, 0.02) 0%, transparent 100%);
       border-top: 1px solid rgba(0, 0, 0, 0.03);
     }
@@ -433,7 +432,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: var(--espaco-sm);
+      gap: var(--espaco-xs);
       font-size: 12px;
       color: var(--texto-muted);
     }
@@ -445,14 +444,6 @@
     }
 
     @media (max-width: 400px) {
-      body {
-        padding: var(--espaco-sm);
-      }
-
-      .container {
-        padding-bottom: 64px;
-      }
-
       .opcoes-grid {
         grid-template-columns: 1fr;
       }
@@ -471,9 +462,8 @@
         <div class="bloco">
           <div class="bloco-descricao">
             <p class="bloco-descricao-texto">
-              Realizamos <strong>passeios caninos individuais</strong>, pensados para cães
-              que precisam de rotina, atenção e acompanhamento responsável durante o dia.
-              O atendimento é local, organizado e humano, sempre alinhado diretamente com o tutor.
+              Realizamos <strong>passeios caninos individuais</strong> com atenção, rotina e cuidado. 
+              Atendimento local e humano em Centro, Batel e Água Verde.
             </p>
           </div>
         </div>
@@ -495,7 +485,7 @@
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </span>
-              Todo o atendimento é feito exclusivamente pelo WhatsApp
+              Atendimento pelo WhatsApp
             </li>
             <li class="lista-checks-item">
               <span class="check-icon">
@@ -503,7 +493,7 @@
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </span>
-              Os passeios são organizados por turnos
+              Passeios por turnos
             </li>
             <li class="lista-checks-item">
               <span class="check-icon">
@@ -511,7 +501,7 @@
                   <polyline points="20 6 9 17 4 12"></polyline>
                 </svg>
               </span>
-              A confirmação acontece diretamente com a equipe
+              Confirmação direta
             </li>
           </ul>
         </div>
@@ -524,7 +514,7 @@
                 <polyline points="12 6 12 12 16 14"></polyline>
               </svg>
             </div>
-            <h3 class="bloco-header-label">Turnos disponíveis</h3>
+            <h3 class="bloco-header-label">Turnos</h3>
           </div>
           <div class="turnos-container">
             <span class="turno-badge">Manhã</span>
@@ -541,7 +531,7 @@
                 <circle cx="12" cy="7" r="4"></circle>
               </svg>
             </div>
-            <h3 class="bloco-header-label">Você já é nosso cliente?</h3>
+            <h3 class="bloco-header-label">Opções</h3>
           </div>
           <div class="opcoes-grid">
             <a class="opcao-card primaria" href="novo.html">
@@ -562,43 +552,6 @@
               <span class="opcao-sub">Agendar passeio</span>
             </a>
           </div>
-        </div>
-
-        <div class="bloco">
-          <div class="bloco-header">
-            <div class="bloco-header-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-              </svg>
-            </div>
-            <h3 class="bloco-header-label">Nossos serviços</h3>
-          </div>
-          <ul class="lista-checks">
-            <li class="lista-checks-item">
-              <span class="check-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              Passeios individuais
-            </li>
-            <li class="lista-checks-item">
-              <span class="check-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              Pacotes mensais
-            </li>
-            <li class="lista-checks-item">
-              <span class="check-icon">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-                  <polyline points="20 6 9 17 4 12"></polyline>
-                </svg>
-              </span>
-              Apoio durante o dia (sob consulta)
-            </li>
-          </ul>
         </div>
 
         <div class="cta-secao">
@@ -622,7 +575,7 @@
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
-          Atendimento local em Curitiba
+          Curitiba
         </p>
       </footer>
     </div>
