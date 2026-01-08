@@ -2,53 +2,423 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>Serviços</title>
+  <title>Serviços – Passeios Caninos</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
+  <meta name="description" content="Conheça os serviços de passeios caninos individuais, pacotes mensais e apoio durante o dia. Atendimento local e humano.">
+  <style>
+    :root {
+      --verde-primario: #0D4728;
+      --verde-secundario: #1B5E3A;
+      --verde-destaque: #2E7D52;
+      --verde-luz-fundo: #E8F5E9;
+      --verde-claro-destaque: #C8E6C9;
+      --whatsapp: #25D366;
+      --whatsapp-hover: #20BD55;
+      --texto-escuro: #1A1A1A;
+      --texto-medio: #4A4A4A;
+      --texto-claro: #757575;
+      --texto-muted: #9E9E9E;
+      --fundo-pagina: #F5F7F5;
+      --fundo-card: #FFFFFF;
+      --fundo-secao: #FAFAFA;
+      --sombra-forte: 0 8px 32px rgba(13, 71, 40, 0.12);
+      --transicao-media: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --transicao-rapida: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      --espaco-xs: 4px;
+      --espaco-sm: 8px;
+      --espaco-md: 16px;
+      --espaco-lg: 24px;
+      --espaco-xl: 32px;
+      --raio-grande: 16px;
+      --raio-medio: 12px;
+      --fonte-corpo: 16px;
+      --fonte-pequeno: 14px;
+      --fonte-label: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--fundo-pagina);
+      color: var(--texto-escuro);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      padding: var(--espaco-sm);
+    }
+
+    .container {
+      max-width: 440px;
+      margin: 0 auto;
+      padding-bottom: var(--espaco-xl);
+      width: 100%;
+    }
+
+    .card {
+      background: var(--fundo-card);
+      border-radius: var(--raio-grande);
+      box-shadow: var(--sombra-forte);
+      overflow: visible;
+    }
+
+    .conteudo {
+      padding: var(--espaco-lg);
+    }
+
+    .cabecalho {
+      margin-bottom: var(--espaco-lg);
+      padding-bottom: var(--espaco-md);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .cabecalho h1 {
+      color: var(--verde-primario);
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: var(--espaco-sm);
+      line-height: 1.3;
+    }
+
+    .cabecalho p {
+      color: var(--texto-medio);
+      font-size: var(--fonte-corpo);
+      line-height: 1.7;
+    }
+
+    .secao {
+      margin-bottom: var(--espaco-lg);
+    }
+
+    .secao:last-child {
+      margin-bottom: 0;
+    }
+
+    .secao-titulo {
+      color: var(--verde-primario);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: var(--espaco-sm);
+    }
+
+    .secao-texto {
+      color: var(--texto-medio);
+      font-size: var(--fonte-corpo);
+      line-height: 1.7;
+      margin-bottom: var(--espaco-sm);
+    }
+
+    .secao-texto:last-child {
+      margin-bottom: 0;
+    }
+
+    .secao-destaque {
+      background: linear-gradient(135deg, var(--verde-luz-fundo) 0%, rgba(232, 245, 233, 0.5) 100%);
+      border-radius: var(--raio-grande);
+      padding: var(--espaco-md);
+      margin-bottom: var(--espaco-sm);
+    }
+
+    .secao-destaque:last-child {
+      margin-bottom: 0;
+    }
+
+    .secao-destaque p {
+      color: var(--texto-medio);
+      font-size: var(--fonte-corpo);
+      line-height: 1.7;
+    }
+
+    .lista {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--espaco-xs);
+      margin-top: var(--espaco-sm);
+    }
+
+    .lista-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--espaco-sm);
+      padding: var(--espaco-sm) var(--espaco-sm);
+      background: var(--fundo-secao);
+      border-radius: var(--raio-medio);
+      font-size: var(--fonte-pequeno);
+      color: var(--texto-medio);
+      transition: var(--transicao-rapida);
+    }
+
+    .lista-item:hover {
+      background: var(--verde-luz-fundo);
+      transform: translateX(4px);
+    }
+
+    .check-icon {
+      width: 18px;
+      height: 18px;
+      background: var(--verde-claro-destaque);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .check-icon svg {
+      width: 9px;
+      height: 9px;
+      color: var(--verde-primario);
+    }
+
+    .cta-secao {
+      margin-top: var(--espaco-lg);
+      padding-top: var(--espaco-md);
+      border-top: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .cta-header {
+      text-align: center;
+      margin-bottom: var(--espaco-md);
+    }
+
+    .cta-label {
+      display: inline-flex;
+      align-items: center;
+      gap: var(--espaco-xs);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--texto-claro);
+      font-weight: 500;
+    }
+
+    .cta-label::before,
+    .cta-label::after {
+      content: "";
+      width: 20px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--texto-claro));
+    }
+
+    .cta-label::after {
+      background: linear-gradient(90deg, var(--texto-claro), transparent);
+    }
+
+    .btn-whatsapp {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--espaco-xs);
+      width: 100%;
+      background: linear-gradient(135deg, var(--whatsapp) 0%, var(--whatsapp-hover) 100%);
+      color: white;
+      text-decoration: none;
+      padding: var(--espaco-md);
+      border-radius: var(--raio-grande);
+      font-size: var(--fonte-corpo);
+      font-weight: 600;
+      transition: var(--transicao-media);
+      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.3);
+    }
+
+    .btn-whatsapp::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%, rgba(0, 0, 0, 0.05) 100%);
+    }
+
+    .btn-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+    }
+
+    .btn-whatsapp:active {
+      transform: translateY(-1px);
+    }
+
+    .btn-whatsapp svg {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-whatsapp span {
+      position: relative;
+      z-index: 1;
+    }
+
+    .pulse {
+      position: absolute;
+      inset: -2px;
+      border-radius: var(--raio-grande);
+      background: transparent;
+      border: 2px solid var(--whatsapp);
+      opacity: 0;
+      animation: pulse 2.5s ease-out infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 0.6;
+      }
+      100% {
+        transform: scale(1.1);
+        opacity: 0;
+      }
+    }
+
+    .rodape {
+      text-align: center;
+      padding: var(--espaco-md);
+      padding-top: var(--espaco-lg);
+      background: linear-gradient(to top, rgba(13, 71, 40, 0.02) 0%, transparent 100%);
+      border-top: 1px solid rgba(0, 0, 0, 0.03);
+    }
+
+    .rodape-marca {
+      font-size: var(--fonte-pequeno);
+      font-weight: 600;
+      color: var(--verde-primario);
+      margin-bottom: var(--espaco-xs);
+    }
+
+    .rodape-local {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: var(--espaco-xs);
+      font-size: 12px;
+      color: var(--texto-muted);
+    }
+
+    .rodape-local svg {
+      width: 14px;
+      height: 14px;
+      color: var(--texto-claro);
+    }
+
+    @media (max-width: 400px) {
+      .cabecalho h1 {
+        font-size: 1.3rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
+  <div class="container">
+    <div class="card">
+      <div class="conteudo">
+        <header class="cabecalho">
+          <h1>Serviços oferecidos</h1>
+          <p>
+            Os serviços são organizados para atender diferentes rotinas e necessidades,
+            sempre com foco em cuidado individual, organização e bem-estar do cão.
+          </p>
+        </header>
 
-<header>
-  <h1>Serviços oferecidos</h1>
-</header>
+        <section class="secao">
+          <h2 class="secao-titulo">Passeios caninos individuais</h2>
+          <div class="secao-destaque">
+            <p class="secao-texto">
+              Os passeios individuais são a base do serviço. Cada cão é atendido de forma
+              exclusiva, respeitando seu ritmo, comportamento e necessidades específicas.
+            </p>
+          </div>
+          <div class="secao-destaque">
+            <p class="secao-texto">
+              Esse formato garante mais atenção durante o percurso, mais segurança
+              e uma experiência mais tranquila, especialmente para cães que não se
+              adaptam bem a passeios em grupo.
+            </p>
+          </div>
+        </section>
 
-<main>
+        <section class="secao">
+          <h2 class="secao-titulo">Pacotes mensais</h2>
+          <div class="secao-destaque">
+            <p class="secao-texto">
+              Os pacotes mensais são indicados para tutores que precisam de
+              constância e organização na rotina do cão ao longo da semana.
+            </p>
+          </div>
+          <div class="secao-destaque">
+            <p class="secao-texto">
+              Nesse formato, os dias e turnos são definidos de forma recorrente,
+              facilitando o planejamento e garantindo acompanhamento regular.
+            </p>
+          </div>
+        </section>
 
-<section>
-  <h2>Passeios individuais</h2>
-  <p>
-    Passeios realizados de forma individual, organizados por turno,
-    com atenção exclusiva e foco no bem-estar do cão.
-  </p>
-</section>
+        <section class="secao">
+          <h2 class="secao-titulo">Apoio durante o dia</h2>
+          <div class="secao-destaque">
+            <p class="secao-texto">
+              O apoio durante o dia é um serviço sob consulta, pensado para situações
+              em que o tutor precisa de suporte prolongado além do passeio tradicional.
+            </p>
+          </div>
+          <div class="secao-destaque">
+            <p class="secao-texto">
+              Cada caso é avaliado individualmente, considerando a rotina do cão,
+              o tempo necessário e o tipo de acompanhamento mais adequado.
+            </p>
+          </div>
+        </section>
 
-<section>
-  <h2>Pacotes mensais</h2>
-  <p>
-    Indicado para quem precisa de rotina fixa durante a semana,
-    com organização e constância.
-  </p>
-</section>
+        <section class="secao">
+          <h2 class="secao-titulo">Como escolher o serviço ideal</h2>
+          <div class="secao-destaque">
+            <p class="secao-texto">
+              Durante o atendimento pelo WhatsApp, avaliamos juntos qual serviço
+              faz mais sentido para sua rotina e para as necessidades do seu cão.
+            </p>
+          </div>
+          <div class="secao-destaque">
+            <p class="secao-texto">
+              Os valores e formatos são sempre explicados antes da confirmação,
+              de forma clara e transparente.
+            </p>
+          </div>
+        </section>
 
-<section>
-  <h2>Apoio durante o dia</h2>
-  <p>
-    Serviço sob consulta, indicado para necessidades específicas
-    de cuidado e acompanhamento prolongado.
-  </p>
-</section>
+        <div class="cta-secao">
+          <div class="cta-header">
+            <span class="cta-label">Fale conosco</span>
+          </div>
+          <a class="btn-whatsapp" href="https://wa.me/5511964502997">
+            <div class="pulse"></div>
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 2.875 1.213 1.065 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            <span>Falar no WhatsApp</span>
+          </a>
+        </div>
+      </div>
 
-<section>
-  <a class="whatsapp" href="https://wa.me/5511964502997">
-    Agendar pelo WhatsApp
-  </a>
-</section>
-
-</main>
-
-<footer>
-  <p><a href="index.html">Início</a></p>
-</footer>
-
+      <footer class="rodape">
+        <p class="rodape-marca">Passeios Caninos</p>
+        <p class="rodape-local">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Atendimento local em Curitiba
+        </p>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
