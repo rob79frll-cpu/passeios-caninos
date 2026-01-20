@@ -5,36 +5,54 @@
   <title>Passeios Caninos – Centro de Curitiba</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Passeios caninos individuais em Centro de Curitiba. Atendimento local, humano e organizado.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <style>
     :root {
-      --verde-profundo: #0D3B1F;
-      --verde-principal: #156B3E;
-      --verde-medio: #1E8A52;
-      --verde-vibrante: #2EA66A;
-      --verde-suave: #4CAF6A;
-      --verde-pastel: #7BC99A;
-      --verde-luz: #A8E6C2;
-      --cinza-escuro: #1A1A1A;
-      --cinza-medio: #4A4A4A;
-      --cinza-claro: #6B6B6B;
-      --cinza-muito-claro: #9A9A9A;
-      --cinza-borda: #D4D4D4;
-      --fundo-principal: #F7FAF8;
-      --fundo-secundario: #FFFFFF;
-      --fundo-destaque: #E8F5ED;
-      --sombra-suave: 0 2px 12px rgba(13, 59, 31, 0.06);
-      --sombra-media: 0 4px 20px rgba(13, 59, 31, 0.08);
-      --sombra-forte: 0 8px 32px rgba(13, 59, 31, 0.12);
-      --sombra-hover: 0 12px 40px rgba(13, 59, 31, 0.16);
+      --verde-oliva: #4A6741;
+      --verde-musgo: #3D5636;
+      --verde-escuro: #2D4229;
+      --laranja-ambar: #E8954A;
+      --laranja-escuro: #D68439;
+      --terracota: #C4754A;
+      --bege-fundo: #F5F0E8;
+      --bege-claro: #EDE6DC;
+      --bege-medio: #E5DCD0;
+      --branco-off-white: #FDFBF7;
+      --preto-suave: #2C2C2C;
+      --cinza-texto: #5A5A5A;
+      --cinza-claro: #8A8A8A;
+      --patinha-verde: rgba(74, 103, 65, 0.12);
+      --patinha-laranja: rgba(232, 149, 74, 0.1);
+      --folha-verde: rgba(61, 86, 54, 0.08);
+      --sombra-suave: 0 2px 12px rgba(45, 66, 41, 0.08);
+      --sombra-media: 0 4px 20px rgba(45, 66, 41, 0.12);
+      --sombra-forte: 0 8px 32px rgba(45, 66, 41, 0.16);
       --transicao: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      --espaco-xs: 6px;
+      --espaco-xs: 8px;
       --espaco-sm: 12px;
       --espaco-md: 20px;
       --espaco-lg: 28px;
       --espaco-xl: 40px;
-      --raio-pequeno: 6px;
-      --raio-medio: 10px;
-      --raio-grande: 16px;
+      --espaco-xxl: 60px;
+      --raio-pequeno: 8px;
+      --raio-medio: 16px;
+      --raio-grande: 24px;
+    }
+
+    /* Textura de fundo sutil */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+      opacity: 0.03;
+      pointer-events: none;
+      z-index: -1;
     }
 
     * {
@@ -48,18 +66,67 @@
     }
 
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      background: linear-gradient(135deg, var(--fundo-principal) 0%, #EEF5F0 100%);
-      color: var(--cinza-escuro);
-      line-height: 1.65;
+      font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bege-fundo);
+      color: var(--preto-suave);
+      line-height: 1.7;
       font-size: 16px;
       -webkit-font-smoothing: antialiased;
+      position: relative;
+    }
+
+    /* Elementos decorativos de fundo */
+    .folha-decorativa {
+      position: fixed;
+      width: 200px;
+      height: 200px;
+      opacity: 0.06;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .folha-decorativa-1 {
+      top: -20px;
+      left: -20px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 C20 35, 10 65, 50 95 C90 65, 80 35, 50 5 M50 15 C30 40, 25 60, 50 85 M50 20 C35 45, 35 55, 50 75' fill='none' stroke='%233D5636' stroke-width='2'/%3E%3C/svg%3E") no-repeat center;
+      transform: rotate(-15deg);
+    }
+
+    .folha-decorativa-2 {
+      bottom: -30px;
+      right: -30px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M50 5 C20 35, 10 65, 50 95 C90 65, 80 35, 50 5 M50 15 C30 40, 25 60, 50 85 M50 20 C35 45, 35 55, 50 75' fill='none' stroke='%233D5636' stroke-width='2'/%3E%3C/svg%3E") no-repeat center;
+      transform: rotate(165deg) scaleX(-1);
+    }
+
+    /* Patinhas decorativas */
+    .patinha {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      opacity: 0.08;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .patinha-1 {
+      top: 25%;
+      right: 10px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%234A6741'%3E%3Cpath d='M6.5 11c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-2 5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm6-5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm2-5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-6 10c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-2 5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm6-5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm2-5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-6 10c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm8 0c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-2 5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1z'/%3E%3C/svg%3E") no-repeat center;
+    }
+
+    .patinha-2 {
+      bottom: 30%;
+      left: 10px;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23C4754A'%3E%3Cpath d='M6.5 11c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-2 5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm6-5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm2-5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-6 10c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-2 5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm6-5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm2-5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-6 10c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm8 0c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1zm-2 5c.5 0 1 .5 1 1s-.5 1-1 1-1-.5-1-1 .5-1 1-1z'/%3E%3C/svg%3E") no-repeat center;
     }
 
     .container {
-      max-width: 500px;
+      max-width: 480px;
       margin: 0 auto;
       padding: 0 var(--espaco-md) var(--espaco-xl);
+      position: relative;
+      z-index: 1;
     }
 
     /* Hero */
@@ -68,45 +135,39 @@
       position: relative;
     }
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      bottom: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 60px;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--verde-medio), transparent);
-      border-radius: 2px;
-    }
-
     .hero-cabecalho {
-      display: flex;
-      justify-content: center;
-      padding: var(--espaco-md);
-      background: linear-gradient(135deg, var(--fundo-destaque) 0%, var(--fundo-principal) 100%);
+      text-align: center;
+      padding: var(--espaco-lg) var(--espaco-md);
+      background: linear-gradient(135deg, var(--branco-off-white) 0%, var(--bege-claro) 100%);
       border-radius: var(--raio-medio) var(--raio-medio) 0 0;
+      border: 1px solid var(--bege-medio);
+      border-bottom: none;
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--fundo-secundario);
-      padding: 8px 14px;
-      border-radius: var(--raio-medio);
-      font-size: 0.8125rem;
-      color: var(--verde-principal);
+    .hero-titulo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 600;
+      color: var(--verde-escuro);
+      line-height: 1.25;
+      margin-bottom: var(--espaco-xs);
+      letter-spacing: -0.01em;
+    }
+
+    .hero-subtitulo {
+      font-size: 0.875rem;
+      color: var(--cinza-texto);
       font-weight: 500;
-      letter-spacing: 0.5px;
-      box-shadow: var(--sombra-suave);
-      border: 1px solid rgba(30, 138, 82, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
 
-    .hero-badge svg {
-      width: 16px;
-      height: 16px;
-      color: var(--verde-medio);
+    .hero-subtitulo svg {
+      width: 14px;
+      height: 14px;
+      color: var(--laranja-ambar);
     }
 
     .hero-img-container {
@@ -124,107 +185,89 @@
       aspect-ratio: 9/16;
     }
 
+
     .hero-conteudo {
-      background: var(--fundo-secundario);
+      background: var(--branco-off-white);
       padding: var(--espaco-lg);
       border-radius: 0 0 var(--raio-grande) var(--raio-grande);
-      box-shadow: var(--sombra-media);
+      box-shadow: var(--sombra-suave);
+      border: 1px solid var(--bege-medio);
+      border-top: none;
       position: relative;
     }
 
-    .hero-conteudo::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: linear-gradient(90deg, var(--verde-profundo), var(--verde-medio), var(--verde-vibrante));
-      border-radius: var(--raio-grande) var(--raio-grande) 0 0;
-    }
 
-    .hero h1 {
-      font-size: 1.625rem;
-      font-weight: 700;
-      color: var(--verde-profundo);
-      margin-bottom: var(--espaco-sm);
-      line-height: 1.25;
-      letter-spacing: -0.02em;
-    }
-
-    .hero-regiao {
-      font-size: 0.875rem;
-      color: var(--cinza-medio);
-      margin-bottom: var(--espaco-md);
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      padding-bottom: var(--espaco-md);
-      border-bottom: 1px solid var(--fundo-destaque);
-    }
-
-    .hero-regiao svg {
-      width: 16px;
-      height: 16px;
-      color: var(--verde-principal);
-    }
 
     .hero-texto {
       font-size: 0.9375rem;
-      color: var(--cinza-medio);
+      color: var(--cinza-texto);
       line-height: 1.75;
-      margin-bottom: var(--espaco-md);
+      margin-bottom: var(--espaco-lg);
+      text-align: center;
+    }
+
+    .hero-lista {
+      list-style: none;
+      margin-bottom: var(--espaco-lg);
+    }
+
+    .hero-lista-item {
+      display: flex;
+      align-items: center;
+      gap: var(--espaco-sm);
+      padding: var(--espaco-xs) 0;
+      font-size: 0.875rem;
+      color: var(--cinza-texto);
+    }
+
+    .hero-lista-item svg {
+      width: 18px;
+      height: 18px;
+      color: var(--verde-oliva);
+      flex-shrink: 0;
+    }
+
+    .hero-lista-item span {
+      color: var(--verde-musgo);
+      font-weight: 500;
     }
 
     /* Section */
     .secao {
-      background: var(--fundo-secundario);
+      background: var(--branco-off-white);
       padding: var(--espaco-lg);
       border-radius: var(--raio-grande);
       box-shadow: var(--sombra-suave);
       margin-bottom: var(--espaco-md);
       position: relative;
-      overflow: hidden;
-      transition: var(--transicao);
-    }
-
-    .secao:hover {
-      box-shadow: var(--sombra-media);
-      transform: translateY(-2px);
-    }
-
-    .secao::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, var(--fundo-destaque), transparent);
+      border: 1px solid var(--bege-claro);
     }
 
     .secao-titulo {
-      font-size: 1.125rem;
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.25rem;
       font-weight: 600;
-      color: var(--verde-profundo);
+      color: var(--verde-escuro);
       margin-bottom: var(--espaco-md);
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      position: relative;
+      padding-left: var(--espaco-md);
     }
 
     .secao-titulo::before {
       content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
       width: 4px;
-      height: 20px;
-      background: linear-gradient(to bottom, var(--verde-principal), var(--verde-vibrante));
+      height: 24px;
+      background: linear-gradient(to bottom, var(--verde-oliva), var(--laranja-ambar));
       border-radius: 2px;
-      flex-shrink: 0;
     }
 
     .secao-texto {
       font-size: 0.9375rem;
-      color: var(--cinza-medio);
+      color: var(--cinza-texto);
       line-height: 1.75;
       margin-bottom: var(--espaco-sm);
     }
@@ -234,7 +277,7 @@
     }
 
     .secao-texto strong {
-      color: var(--verde-principal);
+      color: var(--verde-musgo);
       font-weight: 600;
     }
 
@@ -249,18 +292,18 @@
       align-items: flex-start;
       gap: var(--espaco-sm);
       padding: var(--espaco-sm) var(--espaco-md);
-      background: var(--fundo-principal);
-      border-radius: var(--raio-medio);
+      background: var(--bege-fundo);
+      border-radius: var(--raio-pequeno);
       font-size: 0.875rem;
-      color: var(--cinza-medio);
+      color: var(--cinza-texto);
       margin-bottom: var(--espaco-xs);
       transition: var(--transicao);
       border: 1px solid transparent;
     }
 
     .lista-item:hover {
-      background: var(--fundo-destaque);
-      border-color: rgba(30, 138, 82, 0.15);
+      background: var(--bege-claro);
+      border-color: var(--bege-medio);
       transform: translateX(4px);
     }
 
@@ -271,69 +314,26 @@
     .lista-icone {
       width: 18px;
       height: 18px;
-      color: var(--verde-principal);
+      color: var(--verde-oliva);
       flex-shrink: 0;
       margin-top: 1px;
     }
 
-    /* Turnos */
-    .turnos {
-      display: flex;
-      gap: var(--espaco-sm);
-      margin-top: var(--espaco-md);
-      position: relative;
-    }
-
-    .turnos::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: linear-gradient(135deg, var(--fundo-destaque), var(--fundo-principal));
-      border-radius: var(--raio-medio);
-      opacity: 0.5;
-      z-index: 0;
-    }
-
-    .turno {
-      flex: 1;
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      padding: var(--espaco-sm);
-      font-size: 0.8125rem;
-      color: var(--verde-principal);
-      font-weight: 600;
-      transition: var(--transicao);
-      cursor: default;
-    }
-
-    .turno:hover {
-      color: var(--verde-profundo);
-      transform: translateY(-2px);
-    }
-
-    .turno:not(:last-child) {
-      border-right: 1px solid rgba(30, 138, 82, 0.15);
-    }
-
     /* Destaque */
     .destaque {
-      background: linear-gradient(135deg, var(--fundo-destaque) 0%, rgba(232, 245, 237, 0.6) 100%);
+      background: linear-gradient(135deg, var(--bege-claro) 0%, var(--bege-fundo) 100%);
       padding: var(--espaco-md);
-      border-radius: var(--raio-medio);
+      border-radius: var(--raio-pequeno);
       margin-bottom: var(--espaco-sm);
       font-size: 0.875rem;
-      color: var(--cinza-medio);
+      color: var(--cinza-texto);
       line-height: 1.7;
-      border-left: 3px solid var(--verde-principal);
+      border-left: 3px solid var(--laranja-ambar);
       transition: var(--transicao);
     }
 
     .destaque:hover {
-      background: linear-gradient(135deg, rgba(232, 245, 237, 0.8) 0%, var(--fundo-destaque) 100%);
+      background: linear-gradient(135deg, var(--bege-fundo) 0%, var(--bege-claro) 100%);
     }
 
     .destaque:last-child {
@@ -344,49 +344,78 @@
     .subtitulo {
       font-size: 0.875rem;
       font-weight: 600;
-      color: var(--verde-principal);
+      color: var(--verde-musgo);
       margin-top: var(--espaco-md);
       margin-bottom: var(--espaco-sm);
       display: flex;
       align-items: center;
       gap: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
 
     .subtitulo::before {
       content: "";
       width: 6px;
       height: 6px;
-      background: var(--verde-vibrante);
+      background: var(--laranja-ambar);
       border-radius: 50%;
+    }
+
+    /* Cards Internos */
+    .card-interno {
+      background: var(--bege-fundo);
+      border-radius: var(--raio-pequeno);
+      padding: var(--espaco-md);
+      margin-bottom: var(--espaco-sm);
+      border: 1px solid var(--bege-claro);
+      transition: var(--transicao);
+    }
+
+    .card-interno:last-child {
+      margin-bottom: 0;
+    }
+
+    .card-interno:hover {
+      border-color: var(--bege-medio);
+      background: var(--bege-claro);
+    }
+
+    .card-preco {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-preco-texto {
+      font-weight: 500;
+      color: var(--preto-suave);
+    }
+
+    .card-preco-valor {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--terracota);
     }
 
     /* CTA */
     .cta {
-      background: var(--fundo-secundario);
+      background: var(--branco-off-white);
       padding: var(--espaco-lg);
       border-radius: var(--raio-grande);
       box-shadow: var(--sombra-suave);
       text-align: center;
       margin-bottom: var(--espaco-md);
       position: relative;
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--verde-profundo), var(--verde-medio), var(--verde-profundo));
+      border: 1px solid var(--bege-claro);
     }
 
     .cta-label {
       font-size: 0.6875rem;
       text-transform: uppercase;
       letter-spacing: 2.5px;
-      color: var(--cinza-muito-claro);
+      color: var(--cinza-claro);
       margin-bottom: var(--espaco-md);
       display: block;
       font-weight: 600;
@@ -398,15 +427,15 @@
       justify-content: center;
       gap: 10px;
       width: 100%;
-      background: linear-gradient(135deg, #25D366 0%, #20BD55 100%);
+      background: linear-gradient(135deg, var(--laranja-ambar) 0%, var(--laranja-escuro) 100%);
       color: white;
       text-decoration: none;
-      padding: 16px 24px;
+      padding: 18px 24px;
       border-radius: var(--raio-medio);
       font-size: 1rem;
       font-weight: 600;
       transition: var(--transicao);
-      box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
+      box-shadow: 0 4px 16px rgba(232, 149, 74, 0.3);
       position: relative;
       overflow: hidden;
     }
@@ -418,13 +447,13 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
       transition: left 0.5s ease;
     }
 
     .btn-wpp:hover {
       transform: translateY(-2px);
-      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.35);
+      box-shadow: 0 6px 24px rgba(232, 149, 74, 0.4);
     }
 
     .btn-wpp:hover::before {
@@ -436,8 +465,8 @@
     }
 
     .btn-wpp svg {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       flex-shrink: 0;
       position: relative;
       z-index: 1;
@@ -450,7 +479,7 @@
 
     /* Rodapé */
     .rodape {
-      background: linear-gradient(135deg, var(--verde-profundo) 0%, var(--verde-principal) 100%);
+      background: linear-gradient(135deg, var(--verde-escuro) 0%, var(--verde-musgo) 100%);
       padding: var(--espaco-lg);
       border-radius: var(--raio-grande);
       box-shadow: var(--sombra-media);
@@ -471,6 +500,7 @@
     }
 
     .rodape-titulo {
+      font-family: 'Playfair Display', Georgia, serif;
       font-size: 1.125rem;
       font-weight: 700;
       color: white;
@@ -480,48 +510,29 @@
       letter-spacing: 0.5px;
     }
 
-    .rodape-local {
+    .rodape-texto {
       font-size: 0.8125rem;
       color: rgba(255, 255, 255, 0.8);
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 6px;
-      padding: 8px 16px;
+      gap: 8px;
+      padding: 10px 20px;
       background: rgba(255, 255, 255, 0.1);
-      border-radius: var(--raio-medio);
+      border-radius: var(--raio-pequeno);
       position: relative;
       z-index: 1;
     }
 
-    .rodape-local svg {
+    .rodape-texto svg {
       width: 14px;
       height: 14px;
-      color: var(--verde-pastel);
-    }
-
-    /* Cards Internos */
-    .card-interno {
-      background: var(--fundo-principal);
-      border-radius: var(--raio-medio);
-      padding: var(--espaco-md);
-      margin-bottom: var(--espaco-sm);
-      border: 1px solid rgba(30, 138, 82, 0.08);
-      transition: var(--transicao);
-    }
-
-    .card-interno:last-child {
-      margin-bottom: 0;
-    }
-
-    .card-interno:hover {
-      border-color: rgba(30, 138, 82, 0.2);
-      box-shadow: inset 0 0 20px rgba(30, 138, 82, 0.05);
+      color: var(--laranja-ambar);
     }
 
     @media (max-width: 520px) {
       .container {
-        padding: 0 var(--espaco-sm) var(--espaco-md);
+        padding: 0 var(--espaco-sm) var(--espaco-lg);
       }
 
       .hero {
@@ -531,21 +542,22 @@
       }
 
       .hero-cabecalho {
-        padding: var(--espaco-sm);
+        padding: var(--espaco-md);
         border-radius: 0;
       }
 
-      .hero-badge {
-        font-size: 0.75rem;
-        padding: 6px 12px;
+      .hero-titulo {
+        font-size: 1.5rem;
       }
 
-      .hero h1 {
-        font-size: 1.375rem;
+      .hero-img-wrapper {
+        width: 160px;
+        height: 160px;
       }
 
       .hero-img {
-        height: auto;
+        width: 120px;
+        height: 120px;
       }
 
       .hero-conteudo {
@@ -553,49 +565,63 @@
         padding: var(--espaco-md);
       }
 
-      .turnos {
-        flex-wrap: wrap;
-      }
-
-      .turno {
-        min-width: 30%;
-        padding: var(--espaco-xs);
-        font-size: 0.75rem;
+      .folha-decorativa, .patinha {
+        display: none;
       }
     }
   </style>
 </head>
 
 <body>
+  <!-- Elementos decorativos de fundo -->
+  <div class="folha-decorativa folha-decorativa-1"></div>
+  <div class="folha-decorativa folha-decorativa-2"></div>
+  <div class="patinha patinha-1"></div>
+  <div class="patinha patinha-2"></div>
+
   <div class="container">
     <!-- Hero -->
     <div class="hero">
       <div class="hero-cabecalho">
-        <span class="hero-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
-            <circle cx="12" cy="7" r="4"></circle>
-          </svg>
-          Atendimento Individual
-        </span>
-      </div>
-      <div class="hero-img-container">
-        <img class="hero-img" src="img/hero.jpg" alt="Passeios Caninos em Centro de Curitiba">
-      </div>
-      <div class="hero-conteudo">
-        <h1>Passeios Caninos – Centro de Curitiba</h1>
-        <p class="hero-regiao">
+        <h1 class="hero-titulo">Passeios Caninos</h1>
+        <p class="hero-subtitulo">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
             <circle cx="12" cy="10" r="3"></circle>
           </svg>
-          Atendimento no Centro, Batel e Água Verde
+          Centro de Curitiba
         </p>
+      </div>
+      
+      <div class="hero-img-container">
+        <img class="hero-img" src="img/hero.jpg" alt="Passeios Caninos em Centro de Curitiba">
+      </div>
+      
+      <div class="hero-conteudo">
         <p class="hero-texto">
-          Passeios caninos individuais com foco em rotina, segurança e bem-estar. 
-          Atendimento local e humano, sem sistemas automáticos.
+          Atendimento individual, com rotina, segurança e previsibilidade. Atendo cães um por vez, organizados por turnos, para tutores que precisam de apoio regular durante o dia.
         </p>
-        <a class="btn-wpp" href="https://wa.me/5511964502997">
+        <ul class="hero-lista">
+          <li class="hero-lista-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>100% individuais</span> — um cão por vez
+          </li>
+          <li class="hero-lista-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Horários fixos</span> — manhã ou tarde
+          </li>
+          <li class="hero-lista-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            <span>Foco em rotina</span> — não apenas energia
+          </li>
+        </ul>
+        <a class="btn-wpp" href="https://wa.me/5541988245710">
           <svg viewBox="0 0 24 24" fill="currentColor">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
           </svg>
@@ -604,203 +630,217 @@
       </div>
     </div>
 
-    <!-- O Serviço -->
+    <!-- Como Funciona o Atendimento -->
     <div class="secao">
-      <h2 class="secao-titulo">O Serviço</h2>
+      <h2 class="secao-titulo">Como Funciona o Atendimento</h2>
       <p class="secao-texto">
-        Realizamos passeios caninos individuais com atenção, rotina e cuidado. Cada cão é 
-        atendido de forma exclusiva, respeitando seu ritmo, comportamento e necessidades específicas.
-      </p>
-      <p class="secao-texto">
-        O foco está em três pilares: <strong>rotina</strong> para estabilidade do animal, 
-        <strong>segurança</strong> durante todo o percurso e <strong>bem-estar</strong> como prioridade.
-      </p>
-      <p class="secao-texto">
-        Não realizamos passeios em grupo. O atendimento é sempre humano e personalizado.
-      </p>
-    </div>
-
-    <!-- Como Funciona -->
-    <div class="secao">
-      <h2 class="secao-titulo">Como Funciona</h2>
-      <p class="secao-texto">
-        O atendimento é realizado exclusivamente pelo WhatsApp. Não trabalhamos com sistemas 
-        automáticos ou agendamentos instantâneos.
-      </p>
-      <p class="secao-texto">
-        Todo o alinhamento é feito diretamente com o tutor, de forma clara e humana. 
-        A organização por turnos garante que cada cão receba a atenção adequada.
+        O serviço é pensado para criar rotina, não apenas "gastar energia".
       </p>
       <ul class="lista">
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Contato pelo WhatsApp
+          Passeios 100% individuais
         </li>
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Organização por turnos
+          Organização por turnos (manhã ou tarde)
         </li>
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Confirmação sempre humana
+          Horários previsíveis dentro do turno
+        </li>
+        <li class="lista-item">
+          <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Condução com foco em segurança e bem-estar
+        </li>
+        <li class="lista-item">
+          <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Comunicação direta pelo WhatsApp
         </li>
       </ul>
-    </div>
-
-    <!-- Turnos -->
-    <div class="secao">
-      <h2 class="secao-titulo">Turnos de Atendimento</h2>
-      <p class="secao-texto">
-        Os passeios são organizados em três turnos. A disponibilidade varia conforme o dia 
-        e a região. Os horários são definidos considerando a rotina do cão e a logística do atendimento.
+      <p class="secao-texto" style="margin-top: var(--espaco-md);">
+        Cada cão é atendido respeitando seu ritmo, perfil e necessidades.
       </p>
-      <div class="turnos">
-        <span class="turno">Manhã</span>
-        <span class="turno">Tarde</span>
-        <span class="turno">Noite</span>
-      </div>
     </div>
 
-    <!-- Serviços Oferecidos -->
+    <!-- Tipos de Passeio -->
     <div class="secao">
-      <h2 class="secao-titulo">Serviços Oferecidos</h2>
+      <h2 class="secao-titulo">Tipos de Passeio</h2>
       
-      <p class="subtitulo">Passeios individuais</p>
+      <p class="subtitulo">Passeios Avulsos</p>
       <div class="card-interno">
-        <p>Atendimento exclusivo para um cão por vez. Ideal para quem busca atenção 
-        dedicada e acompanhamento próximo durante o passeio.</p>
+        <div class="card-preco">
+          <span class="card-preco-texto">Passeio de 30 minutos</span>
+          <span class="card-preco-valor">R$ 35</span>
+        </div>
       </div>
       <div class="card-interno">
-        <p>Indicado para cães que não se adaptam bem a grupos ou que precisam de 
-        supervisão constante.</p>
+        <div class="card-preco">
+          <span class="card-preco-texto">Passeio de 60 minutos</span>
+          <span class="card-preco-valor">R$ 70</span>
+        </div>
       </div>
-
-      <p class="subtitulo">Pacotes mensais</p>
-      <div class="card-interno">
-        <p>Para tutores que precisam de constância na rotina do cão ao longo da semana. 
-        Os dias e turnos são definidos de forma recorrente.</p>
-      </div>
-      <div class="card-interno">
-        <p>Facilita o planejamento e garante acompanhamento regular com condições 
-        específicas para uso frequente.</p>
+      <div class="destaque">
+        <p>Indicados para situações pontuais ou primeiros contatos.</p>
       </div>
 
-      <p class="subtitulo">Apoio durante o dia</p>
+      <p class="subtitulo">Pacotes Mensais</p>
       <div class="card-interno">
-        <p>Serviço sob consulta para situações que exigem suporte prolongado além 
-        do passeio tradicional.</p>
+        <div class="card-preco">
+          <span class="card-preco-texto">2x por semana • 30 min</span>
+          <span class="card-preco-valor">Consulte</span>
+        </div>
       </div>
       <div class="card-interno">
-        <p>Cada caso é avaliado individualmente, considerando a rotina do cão, 
-        o tempo necessário e o tipo de acompanhamento adequado.</p>
+        <div class="card-preco">
+          <span class="card-preco-texto">3x por semana • 30 min</span>
+          <span class="card-preco-valor">Consulte</span>
+        </div>
+      </div>
+      <div class="card-interno">
+        <div class="card-preco">
+          <span class="card-preco-texto">5x por semana • 30 min</span>
+          <span class="card-preco-valor">Consulte</span>
+        </div>
+      </div>
+      <div class="card-interno">
+        <div class="card-preco">
+          <span class="card-preco-texto">Passeios de 60 minutos</span>
+          <span class="card-preco-valor">Consulte</span>
+        </div>
+      </div>
+      <div class="destaque">
+        <p>Os valores e formatos são combinados diretamente no WhatsApp.</p>
       </div>
     </div>
 
     <!-- Para Quem É -->
     <div class="secao">
       <h2 class="secao-titulo">Para Quem É o Serviço</h2>
-      <p class="secao-texto">O serviço é indicado para tutores que:</p>
+      <p class="secao-texto">Este atendimento é ideal para:</p>
       <ul class="lista">
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Valorizam rotina e organização na vida do cão
+          Tutores que trabalham fora
         </li>
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Buscam cuidado individual e personalizado
+          Cães que ficam muito tempo sozinhos
         </li>
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Preferem atendimento humano e direto
+          Quem busca rotina e previsibilidade
+        </li>
+        <li class="lista-item">
+          <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Quem prefere atendimento individual
         </li>
       </ul>
+    </div>
+
+    <!-- Organização e Informações -->
+    <div class="secao">
+      <h2 class="secao-titulo">Organização e Informações</h2>
+      <p class="secao-texto">Para manter a qualidade do atendimento:</p>
+      <ul class="lista">
+        <li class="lista-item">
+          <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Os passeios são sempre individuais
+        </li>
+        <li class="lista-item">
+          <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          A agenda funciona por turnos
+        </li>
+        <li class="lista-item">
+          <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Cancelamentos com antecedência
+        </li>
+        <li class="lista-item">
+          <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"></polyline>
+          </svg>
+          Dias de chuva: adaptação ou remarcação
+        </li>
+      </ul>
+      <div class="destaque" style="margin-top: var(--espaco-md);">
+        <p>Pagamento antecipado: semanal, quinzenal ou mensal.</p>
+      </div>
       <p class="secao-texto" style="margin-top: var(--espaco-md);">
-        O serviço <strong>não é indicado</strong> para quem procura passeios em grupo 
-        ou deseja soluções totalmente automatizadas.
+        Esses pontos garantem organização, segurança e continuidade do serviço.
       </p>
     </div>
 
-    <!-- Orientações -->
+    <!-- Área de Atendimento -->
     <div class="secao">
-      <h2 class="secao-titulo">Orientações Importantes</h2>
-      
-      <p class="subtitulo">Informações necessárias antes do primeiro passeio</p>
-      <p class="secao-texto">
-        Para garantir segurança e bem-estar, é importante informar sobre:
-      </p>
+      <h2 class="secao-titulo">Área de Atendimento</h2>
+      <p class="secao-texto">📍 Centro</p>
+      <p class="secao-texto">📍 Batel</p>
+      <p class="secao-texto">📍 Água Verde</p>
+      <div class="destaque">
+        <p>Atendimento local, focado em proximidade e pontualidade.</p>
+      </div>
+    </div>
+
+    <!-- Próximo Passo -->
+    <div class="secao">
+      <h2 class="secao-titulo">Próximo Passo</h2>
+      <p class="secao-texto">Se você se identificou com esse formato:</p>
       <ul class="lista">
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Comportamento do cão durante passeios
+          Entre em contato pelo WhatsApp
         </li>
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Medos, reatividade ou dificuldades conhecidas
+          Alinhamos disponibilidade de turnos
         </li>
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Restrições médicas ou uso de medicação
+          Você preenche a ficha do cão
         </li>
         <li class="lista-item">
           <svg class="lista-icone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="20 6 9 17 4 12"></polyline>
           </svg>
-          Cuidados específicos necessários
+          Iniciamos o atendimento
         </li>
       </ul>
-
-      <p class="subtitulo" style="margin-top: var(--espaco-md);">Durante o passeio</p>
-      <div class="destaque">
-        <p>Os passeios são realizados com guia adequada e atenção constante. 
-        O trajeto e o ritmo são ajustados conforme o perfil do cão e as condições do dia.</p>
-      </div>
-      <div class="destaque">
-        <p>Caso seja identificado qualquer risco ou desconforto, o passeio 
-        pode ser ajustado ou interrompido.</p>
-      </div>
-
-      <p class="subtitulo" style="margin-top: var(--espaco-md);">Comunicação</p>
-      <div class="destaque">
-        <p>Toda a comunicação acontece pelo WhatsApp. Alterações, ajustes ou dúvidas 
-        devem ser informados com antecedência sempre que possível.</p>
-      </div>
-    </div>
-
-    <!-- Como Entrar em Contato -->
-    <div class="secao">
-      <h2 class="secao-titulo">Como Entrar em Contato</h2>
-      <p class="secao-texto">
-        O agendamento é simples e direto. Você entra em contato pelo WhatsApp, 
-        informamos a disponibilidade por turno, alinhamos o serviço ideal e confirmamos o passeio.
-      </p>
-      <p class="secao-texto">
-        Sem formulários, sem robôs e sem complicação. A conversa flui de forma natural 
-        e humana.
-      </p>
     </div>
 
     <!-- CTA Final -->
     <div class="cta">
       <span class="cta-label">Agende seu passeio</span>
-      <a class="btn-wpp" href="https://wa.me/5511964502997">
+      <a class="btn-wpp" href="https://wa.me/5541988245710">
         <svg viewBox="0 0 24 24" fill="currentColor">
           <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
@@ -810,13 +850,13 @@
 
     <!-- Rodapé -->
     <footer class="rodape">
-      <p class="rodape-titulo">Passeios Caninos</p>
-      <p class="rodape-local">
+      <p class="rodape-titulo">Passeios Caninos — Centro de Curitiba</p>
+      <p class="rodape-texto">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-          <circle cx="12" cy="10" r="3"></circle>
+          <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+          <circle cx="12" cy="7" r="4"></circle>
         </svg>
-        Atendimento local em Curitiba
+        Atendimento individual • Organização por turnos
       </p>
     </footer>
   </div>
